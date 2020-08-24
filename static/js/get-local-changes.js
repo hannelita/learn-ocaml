@@ -3,7 +3,7 @@ track_local_changes();
 
 function scroll_to_update() {
     console.log("trying to scroll");
-    const elem =  document.getElementsByClassName("ace_scrollbar-inner")[0];
+    const elem = document.getElementsByClassName("ace_scrollbar-inner")[0];
     elem.scrollTop = elem.scrollHeight;
 }
 
@@ -20,12 +20,18 @@ function track_local_changes() {
             const stringSolution = strip(exercise)
             // get student nickname 
             const nickname = document.getElementById("learnocaml-nickname").innerHTML
-            const hw_identifier = document.getElementById("learnocaml-exo-tab-text").childNodes[0].innerHTML
             // create Object 
             const obj = new Object();
             obj.nickname = nickname;
             obj.timestamp = new Date().toString();
-            obj.hw_identifier = hw_identifier;
+            if (document.getElementById("learnocaml-exo-tab-text").childNodes[0].innerHTML !== 'undefined') {
+                const hw_identifier = document.getElementById("learnocaml-exo-tab-text").childNodes[0].innerHTML
+                obj.hw_identifier = hw_identifier
+            }
+            else {
+                obj.hw_identifier = " "
+            }
+
             obj.solution = stringSolution;
             const jsonString = JSON.stringify(obj);
             // send to Database
@@ -36,8 +42,8 @@ function track_local_changes() {
         console.log(e);
     }
 }
-    function strip(html) {
-        var tmp = document.createElement("DIV");
-        tmp.innerHTML = html
-        return tmp.textContent || tmp.innerText || ""
-    }
+function strip(html) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html
+    return tmp.textContent || tmp.innerText || ""
+}

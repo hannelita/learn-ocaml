@@ -12,12 +12,17 @@ function get_eval() {
             const stringSolution = strip(exercise)
             // get student nickname 
             const nickname = document.getElementById("learnocaml-nickname").innerHTML
-            const hw_identifier = document.getElementById("learnocaml-exo-tab-text").childNodes[0].innerHTML
             // create Object 
             const obj = new Object();
             obj.nickname = nickname;
             obj.timestamp = new Date().toString();
-            obj.hw_identifier = hw_identifier;
+            if (document.getElementById("learnocaml-exo-tab-text").childNodes[0].innerHTML !== 'undefined') {
+                const hw_identifier = document.getElementById("learnocaml-exo-tab-text").childNodes[0].innerHTML
+                obj.hw_identifier = hw_identifier
+            }
+            else {
+                obj.hw_identifier = " "
+            }
             obj.solution = stringSolution;
             const jsonString = JSON.stringify(obj);
             // send to Database
