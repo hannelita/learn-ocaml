@@ -43,6 +43,32 @@ NB: Do not forget to escape `:` if it appears in `REPOSITORY` to avoid a parsing
 > the Docker daemon (see
 > [documentation](https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface)).
 
+## Using Docker Compose
+
+If you have multiple dependencies (external projects), consider using Docker Compose.
+
+* Install docker-compose
+* In your project root, `cp .env.example .env`
+* Change the `REPOSITORY` variable on `.env` to point to the directory with your exercises
+
+Build and start the environment with build with `docker-compose -f docker-compose.yml up --build`.
+
+Now, access `localhost`.
+
+### Useful Docker commands
+
+`docker ps -a ` lists all the containers
+`docker logs -f CONT_ID` Logs for a specific container
+`docker restart CONT_ID` Restarts a container
+
+`docker stop $(docker ps -aq)` - stops all running containers
+`docker-compose -f docker-compose.yml up --build -d` - starts all containers in detached mode
+`docker exec -it CONT_ID bash` - allows you to access the service (i.e. MongoDB) that is running 
+in a container
+
+
+
+
 ## Manual compilation
 
 Note: you need a working ```opam``` environment (at least `2.0.0~rc2`).
