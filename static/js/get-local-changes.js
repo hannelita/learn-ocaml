@@ -1,11 +1,5 @@
-scroll_to_update();
-track_local_changes();
 
-function scroll_to_update() {
-    console.log("trying to scroll");
-    const elem = document.getElementsByClassName("ace_scrollbar-inner")[0];
-    elem.scrollTop = elem.scrollHeight;
-}
+track_local_changes();
 
 function track_local_changes() {
     const request = new XMLHttpRequest();
