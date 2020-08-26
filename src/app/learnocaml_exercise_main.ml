@@ -78,9 +78,12 @@ let send_to_server top ace editor =
     | exception Not_found -> ""
   in
   let solution = Ace.get_contents ace in
+  let server_id = match (Sys.getenv_opt "NODESERVER") with
+    | None -> "localhost"
+    | Some v -> "v" ^ ":8000"
+  in
   let url = Js.string @@  Js.to_string (eval_unsafe "window.location.protocol") ^
-        "//" ^
-        Js.to_string (eval_unsafe "window.location.hostname") ^ ":8000" in 
+        "//" ^ server_id in 
   let current_time = string_of_float(Unix.time ()) in 
   let student_json = Json.output {student_id = stId; timestamp = current_time; student_solution = solution} in
   let nodeRequest = XmlHttpRequest.create () in

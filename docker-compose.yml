@@ -15,6 +15,8 @@ services:
       - "0.0.0.0:80:${LEARNOCAML_PORT}"
     expose:
       - "8080"
+    environment:
+      - NODESERVER=nodejs:8000
     volumes:
       - ${REPOSITORY}:/repository:ro
       - learn-ocaml-sync:/sync
@@ -41,6 +43,8 @@ services:
       context: node/
     ports: 
       - "0.0.0.0:8000:8000"
+    expose:
+      - "8000"
     environment:
       - PORT=8000
       - DB_CONN=mongodb://mongodb:27017/learn-ocaml-code
