@@ -46,11 +46,10 @@ your exercises.
 
 We assume that the current directory is `$DIR`.
 
-First, clone the current learn-ocaml source tree and check out the **teaching-fp** branch:
+First, clone the current learn-ocaml source tree:
 ```
 git clone https://github.com/teaching-the-art-of-fp/learn-ocaml.git
 cd learn-ocaml
-git checkout teaching-fp
 ```
 
 Get an opam environment (a.k.a "switch") with the learn-ocaml dependencies

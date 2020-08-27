@@ -19,10 +19,11 @@ A demo is available at: (http://learn-ocaml.hackojo.org/).
 Howtos
 ------
 
-* [How to set up an environment to develop exercises?](https://github.com/teaching-the-art-of-fp/learn-ocaml/blob/teaching-fp/docs/howto-setup-exercise-development-environment.md)
-* [How to write exercises?](https://github.com/teaching-the-art-of-fp/learn-ocaml/blob/teaching-fp/docs/howto-write-exercises.md)
-* [How to submit an exercise to the global corpus?](https://github.com/teaching-the-art-of-fp/learn-ocaml/blob/teaching-fp/docs/howto-submit-an-exercise.md)
-* [How to deploy an instance of Learn OCaml?](https://github.com/teaching-the-art-of-fp/learn-ocaml/blob/teaching-fp/docs/howto-deploy-a-learn-ocaml-instance.md)
+* [Detailed guide for writing exercises and graders](docs/exercises-detailed-guide.md)
+* [How to set up an environment to develop exercises?](docs/howto-setup-exercise-development-environment.md)
+* [How to write exercises?](docs/howto-write-exercises.md)
+* [How to submit an exercise to the global corpus?](docs/howto-submit-an-exercise.md)
+* [How to deploy an instance of Learn OCaml?](docs/howto-deploy-a-learn-ocaml-instance.md)
 
 Contacts
 --------
